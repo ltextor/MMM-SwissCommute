@@ -23,9 +23,12 @@ Module.register("MMM-SwissCommute",{
         apiBase: 'http://fahrplan.search.ch/api/route.json',
         from: '',
         to: '',
-		maximumEntries: 5, // Total Maximum Entries
+        maximumEntries: 5, // Total Maximum Entries
+        departureTimeFromNow: 0, // departure time from now in minutes, set to 0 to show departures from now
         minWalkingTime: -1,
         hideTrackInfo: 0,
+		showArrivalTime: true,
+		showDurationOfTrip: false
                 
 //		titleReplace: {
 //			"Zeittabelle ": ""
