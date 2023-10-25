@@ -28,7 +28,8 @@ Module.register("MMM-SwissCommute",{
         minWalkingTime: -1,
         hideTrackInfo: 0,
         showArrivalTime: false,
-        showDurationOfTrip: false
+        showDurationOfTrip: false,
+		width: "350px"
                 
 //		titleReplace: {
 //			"Zeittabelle ": ""

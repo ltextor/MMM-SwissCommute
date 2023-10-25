@@ -31,6 +31,9 @@ modules: [
 |----------------- |-----------
 | `from`        | *Required* Departure station
 | `to `        | *Required* Destination station
-| `maximumEntries `        | *Optional* Maximum number of entries in list <br><br>**Type:** `int` <br>Default 10
-| `minWalkingTime `        | *Optional* Minimum time in minutes to reach the `from` station. Used to highlight a connection in red in case cannot be reached in time <br><br>**Type:** `int` <br>Default -1
-| `hideTrackInfo`        | *Optional* Hide the track column <br><br>**Type:** `int` <br>Default 0
+| `maximumEntries `        | *Optional* Maximum number of entries in list <br><br>**Type:** `int` <br>Default `10`
+| `minWalkingTime `        | *Optional* Minimum time in minutes to reach the `from` station. Used to highlight a connection in red in case cannot be reached in time <br><br>**Type:** `int` <br>Default `-1`
+| `hideTrackInfo`        | *Optional* Hide the track column <br><br>**Type:** `int` <br>Default `0`
+| `showArrivalTime`        | *Optional* Show arrival time <br><br>**Type:** `boolean` <br>Default `false`
+| `showDurationOfTrip`        | *Optional* Show duration of trip <br><br>**Type:** `boolean` <br>Default `false`
+| `width`        | *Optional* Width of the table <br><br>**Type:** `string` (pixels) <br>Default `350px`
