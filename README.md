@@ -29,8 +29,8 @@ modules: [
 
 | Option           | Description
 |----------------- |-----------
-| `from`        | *Required* Departure station
-| `to `        | *Required* Destination station
+| `from`        | *Required* Departure station <br><br>**Type:** `string`
+| `to `        | *Required* Destination station <br><br>**Type:** `string`
 | `maximumEntries `        | *Optional* Maximum number of entries in list <br><br>**Type:** `int` <br>Default `10`
 | `minWalkingTime `        | *Optional* Minimum time in minutes to reach the `from` station. Used to highlight a connection in red in case cannot be reached in time <br><br>**Type:** `int` <br>Default `-1`
 | `hideTrackInfo`        | *Optional* Hide the track column <br><br>**Type:** `int` <br>Default `0`
