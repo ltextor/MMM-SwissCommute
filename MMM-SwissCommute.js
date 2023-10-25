@@ -27,8 +27,8 @@ Module.register("MMM-SwissCommute",{
         departureTimeFromNow: 0, // departure time from now in minutes, set to 0 to show departures from now
         minWalkingTime: -1,
         hideTrackInfo: 0,
-		showArrivalTime: true,
-		showDurationOfTrip: false
+        showArrivalTime: false,
+        showDurationOfTrip: false
                 
 //		titleReplace: {
 //			"Zeittabelle ": ""
