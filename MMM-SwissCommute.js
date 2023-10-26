@@ -169,7 +169,7 @@ Module.register("MMM-SwissCommute",{
             }
             row.appendChild(departureDelayCell);
             
-			if (!this.config.showArrivalTime) {
+			if (this.config.showArrivalTime) {
 				// Arrival time
 				var arrCell = document.createElement("td");
 				arrCell.className = "align-left arrivaltime";
