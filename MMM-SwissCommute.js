@@ -144,7 +144,7 @@ Module.register("MMM-SwissCommute",{
 			trainToCell.className = "align-left trainto";
 			row.appendChild(trainToCell);
 
-			// Time
+			// Departure time
 			var dTime = moment(trains.departureTimestampRaw);
 			var diff = dTime.diff(currentTime, 'minutes');
 
@@ -158,17 +158,37 @@ Module.register("MMM-SwissCommute",{
 
 			row.appendChild(depCell);
 
-			// Delay
-            var delayCell = document.createElement("td");
-            if(trains.delay > 0) {
-                delayCell.className = "delay red";
-                delayCell.innerHTML = "+" + trains.delay + " min";
+			// Departure delay
+            var departureDelayCell = document.createElement("td");
+            if(trains.departureDelay > 0) {
+                departureDelayCell.className = "departureDelay red";
+                departureDelayCell.innerHTML = "+" + trains.departureDelay + " min";
             } else {
-                delayCell.className = "delay red";
-                delayCell.innerHTML = ""; //trains.delay;
+                departureDelayCell.className = "departureDelay red";
+                departureDelayCell.innerHTML = "";
             }
-            row.appendChild(delayCell);
+            row.appendChild(departureDelayCell);
             
+			if (!this.config.showArrivalTime) {
+				// Arrival time
+				var arrCell = document.createElement("td");
+				arrCell.className = "align-left arrivaltime";
+				arrCell.innerHTML = trains.arrivalTimestamp;
+
+				row.appendChild(arrCell);
+
+				// Arrival delay
+				var arrivalDelayCell = document.createElement("td");
+				if(trains.arrivalDelay > 0) {
+					arrivalDelayCell.className = "arrivalDelay red";
+					arrivalDelayCell.innerHTML = "+" + trains.arrivalDelay + " min";
+				} else {
+					arrivalDelayCell.className = "arrivalDelay red";
+					arrivalDelayCell.innerHTML = "";
+				}
+				row.appendChild(arrivalDelayCell);
+			}
+
             // Track
             if (!this.config.hideTrackInfo) {
 	            var trackCell = document.createElement("td");
@@ -211,7 +231,7 @@ Module.register("MMM-SwissCommute",{
 					self.config.station = "";
 					self.updateDom(self.config.animationSpeed);
 
-					Log.error(self.name + ": Incorrect waht so ever...");
+					Log.error(self.name + ": Incorrect what so ever...");
 					retry = false;
 				} else {
 					Log.error(self.name + ": Could not load trains.");
@@ -256,7 +276,10 @@ Module.register("MMM-SwissCommute",{
 					var conn = {
 						departureTimestampRaw: trains.departure,
 						departureTimestamp: moment(trains.departure).format("HH:mm"),
-						delay: parseInt(trains.dep_delay),
+						departureDelay: parseInt(trains.dep_delay),
+						//arrivalTimestampRaw: trains.arrival,
+						arrivalTimestamp: moment(trains.arrival).format("HH:mm"),
+						arrivalDelay: parseInt(trains.arr_delay),
 						to: trains.legs[0].terminal,
 						type: trains.legs[0].type,
 						number: trains.legs[0].line,
