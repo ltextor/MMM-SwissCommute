@@ -185,8 +185,8 @@ Module.register("MMM-SwissCommute",{
 				arrCell.innerHTML = trains.arrivalTimestamp;
 				// Arrival delay
 				if(trains.arrivalDelay > 0) {
-					arrCell.innerHTML += "+" + trains.arrivalDelay;
-					arrCell.className += "red";
+					arrCell.innerHTML += " +" + trains.arrivalDelay;
+					arrCell.className += " red";
 				}
 				row.appendChild(arrCell);
 
