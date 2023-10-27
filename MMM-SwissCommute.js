@@ -153,6 +153,11 @@ Module.register("MMM-SwissCommute",{
 			var depCell = document.createElement("td");
 			depCell.className = "align-left departuretime";
 			depCell.innerHTML = trains.departureTimestamp;
+			// Departure delay
+            if(trains.departureDelay > 0) {
+				depCell.innerHTML += " +" + trains.departureDelay;
+				depCell.className += " red";
+			}
 
 			if (diff <= this.config.minWalkingTime ){
 				row.className = "red";
@@ -161,6 +166,7 @@ Module.register("MMM-SwissCommute",{
 			row.appendChild(depCell);
 
 			// Departure delay
+			/*
             var departureDelayCell = document.createElement("td");
             if(trains.departureDelay > 0) {
                 departureDelayCell.className = "departureDelay red";
@@ -170,6 +176,7 @@ Module.register("MMM-SwissCommute",{
                 departureDelayCell.innerHTML = "";
             }
             row.appendChild(departureDelayCell);
+			*/
             
 			if (this.config.showArrivalTime) {
 				// Arrival time
