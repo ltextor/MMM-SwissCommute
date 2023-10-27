@@ -194,7 +194,8 @@ Module.register("MMM-SwissCommute",{
 				var durationCell = document.createElement("td");
 				durationCell.className = "align-left duration";
 				if(trains.duration >= 60) {
-					durationCell.innerHTML = moment.duration(trains.duration, 'minutes').format(h [h] m [min]);
+					var duration = moment.duration(trains.duration, 'minutes');
+					durationCell.innerHTML = duration.hours() + " h " + duration.minutes() + " min";
 				} else {
 					durationCell.innerHTML = trains.duration + " min";
 				}
