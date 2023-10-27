@@ -193,7 +193,7 @@ Module.register("MMM-SwissCommute",{
 				// Duration of trip
 				var durationCell = document.createElement("td");
 				durationCell.className = "align-left duration";
-				if(trains.duration >= 60) {
+				if(trains.duration >= 3600) {
 					var duration = moment.duration(trains.duration, 'seconds');
 					durationCell.innerHTML = duration.hours() + " h " + duration.minutes() + " min";
 				} else {
