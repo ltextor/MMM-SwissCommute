@@ -36,4 +36,5 @@ modules: [
 | `hideTrackInfo`        | *Optional* Hide the track column <br><br>**Type:** `int` <br>Default `0`
 | `showArrivalTime`        | *Optional* Show arrival time <br><br>**Type:** `boolean` <br>Default `false`
 | `showDurationOfTrip`        | *Optional* Show duration of trip <br><br>**Type:** `boolean` <br>Default `false`
+| `departMinutesFromNow`        | *Optional* Show connections in a given amount of minutes from now (set to `0` to show connections from now) <br><br>**Type:** `int` (minutes) <br>Default `0`
 | `width`        | *Optional* Width of the table <br><br>**Type:** `string` (pixels) <br>Default `350px`

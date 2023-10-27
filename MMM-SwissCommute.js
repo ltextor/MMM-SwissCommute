@@ -29,6 +29,7 @@ Module.register("MMM-SwissCommute",{
         hideTrackInfo: 0,
         showArrivalTime: false,
         showDurationOfTrip: false,
+		departMinutesFromNow: 0, // search for connections x minutes from now
 		width: "350px"
                 
 //		titleReplace: {
@@ -101,6 +102,7 @@ Module.register("MMM-SwissCommute",{
 		
 		var table = document.createElement("table");
 		table.className = "small";
+		table.style.width = this.config.width;
 
 		for (var t in this.trains) {
 			var trains = this.trains[t];
