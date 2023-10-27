@@ -197,7 +197,7 @@ Module.register("MMM-SwissCommute",{
 					var duration = moment.duration(trains.duration, 'seconds');
 					durationCell.innerHTML = duration.hours() + " h " + duration.minutes() + " min";
 				} else {
-					durationCell.innerHTML = trains.duration + " min";
+					durationCell.innerHTML = trains.duration / 60 + " min";
 				}
 
 				row.appendChild(durationCell);
