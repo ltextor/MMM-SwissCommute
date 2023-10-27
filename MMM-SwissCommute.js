@@ -189,6 +189,19 @@ Module.register("MMM-SwissCommute",{
 				row.appendChild(arrivalDelayCell);
 			}
 
+			if (this.config.showDurationOfTrip) {
+				// Duration of trip
+				var durationCell = document.createElement("td");
+				durationCell.className = "align-left duration";
+				if(trains.duration >= 60) {
+					durationCell.innerHTML = moment.duration(trains.duration, 'minutes').format(h [h] m [min]);
+				} else {
+					durationCell.innerHTML = trains.duration + " min";
+				}
+
+				row.appendChild(durationCell);
+			}
+
             // Track
             if (!this.config.hideTrackInfo) {
 	            var trackCell = document.createElement("td");
@@ -280,6 +293,7 @@ Module.register("MMM-SwissCommute",{
 						//arrivalTimestampRaw: trains.arrival,
 						arrivalTimestamp: moment(trains.arrival).format("HH:mm"),
 						arrivalDelay: parseInt(trains.arr_delay),
+						duration: parseInt(trans.duration),
 						to: trains.legs[0].terminal,
 						type: trains.legs[0].type,
 						number: trains.legs[0].line,
