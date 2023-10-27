@@ -294,7 +294,7 @@ Module.register("MMM-SwissCommute",{
 						//arrivalTimestampRaw: trains.arrival,
 						arrivalTimestamp: moment(trains.arrival).format("HH:mm"),
 						arrivalDelay: parseInt(trains.arr_delay),
-						duration: parseInt(trans.duration),
+						duration: parseInt(trains.duration),
 						to: trains.legs[0].terminal,
 						type: trains.legs[0].type,
 						number: trains.legs[0].line,
