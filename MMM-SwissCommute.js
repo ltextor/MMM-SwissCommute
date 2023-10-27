@@ -271,6 +271,10 @@ Module.register("MMM-SwissCommute",{
         params += "from=" + this.config.from;
         params += "&to=" + this.config.to;
 		params += "&num=" + this.config.maximumEntries;
+
+		if(this.config.departMinutesFromNow) {
+			params += "&time=" + moment().add(this.config.departMinutesFromNow, 'minutes').format("HH:mm");
+		}
                 
 		return params;
 	},
