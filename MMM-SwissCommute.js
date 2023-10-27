@@ -183,10 +183,15 @@ Module.register("MMM-SwissCommute",{
 				var arrCell = document.createElement("td");
 				arrCell.className = "align-left arrivaltime";
 				arrCell.innerHTML = trains.arrivalTimestamp;
-
+				// Arrival delay
+				if(trains.arrivalDelay > 0) {
+					arrCell.innerHTML += "+" + trains.arrivalDelay;
+					arrCell.className += "red";
+				}
 				row.appendChild(arrCell);
 
 				// Arrival delay
+				/*
 				var arrivalDelayCell = document.createElement("td");
 				if(trains.arrivalDelay > 0) {
 					arrivalDelayCell.className = "arrivalDelay red";
@@ -196,6 +201,7 @@ Module.register("MMM-SwissCommute",{
 					arrivalDelayCell.innerHTML = "";
 				}
 				row.appendChild(arrivalDelayCell);
+				*/
 			}
 
 			if (this.config.showDurationOfTrip) {
